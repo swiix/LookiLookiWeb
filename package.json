@@ -1,0 +1,30 @@
+{
+  "name": "looki-looki-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "server": "ts-node --compiler-options '{\"module\":\"commonjs\"}' server.ts"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "socket.io": "^4.7.2",
+    "socket.io-client": "^4.7.2",
+    "simple-peer": "^9.11.1"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@types/simple-peer": "^9.11.5",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "ts-node": "^10.9.1",
+    "typescript": "latest"
+  }
+}
