@@ -4,8 +4,8 @@ import next from "next";
 import { Server } from "socket.io";
 
 const dev = process.env.NODE_ENV !== "production";
-const hostname = "localhost";
-const port = 3000;
+const hostname = process.env.HOSTNAME || "0.0.0.0";
+const port = parseInt(process.env.PORT || "3000", 10);
 // when using middleware `hostname` and `port` must be provided below
 const app = next({ dev, hostname, port });
 const handle = app.getRequestHandler();
@@ -60,7 +60,7 @@ app.prepare().then(() => {
             console.error(err);
             process.exit(1);
         })
-        .listen(port, () => {
+        .listen(port, hostname, () => {
             console.log(`> Ready on http://${hostname}:${port}`);
         });
 });
